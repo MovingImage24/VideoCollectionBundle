@@ -1,0 +1,32 @@
+{
+  "name": "movingimage/video-collection-bundle",
+  "description": "Symfony bundle that wires the VideoCollection services into the service container based on configuration",
+  "type": "library",
+  "license": "Proprietary",
+  "authors": [
+    {
+      "name": "Ruben Knol",
+      "email": "ruben.knol@movingimage.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://packagist.mi24.tv/"
+    }
+  ],
+  "config": {
+    "secure-http": false
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": "^5.5 || ^7.0",
+    "symfony/framework-bundle": "^2.7 || ^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "MovingImage\\Bundle\\VideoCollection\\": ""
+    }
+  }
+}
