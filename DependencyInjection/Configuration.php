@@ -19,7 +19,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('video_collection');
+        $rootNode = $treeBuilder->root('video_collections');
 
         $rootNode
             ->children()
@@ -32,6 +32,8 @@ class Configuration implements ConfigurationInterface
                             ->scalarNode('channel_id')
                             ->end()
                             ->scalarNode('search_term')
+                            ->end()
+                            ->scalarNode('search_field')
                             ->end()
                             ->scalarNode('order_property')
                             ->end()

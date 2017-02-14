@@ -89,7 +89,8 @@ class ServiceDefinitionFactory
     public function createCollectionDefinition($name, array $options)
     {
         if (!isset($options['data_provider'])) {
-            throw new \Exception(sprintf('Collection \'%s\' does not have a data provider configured.'));
+            throw new \Exception(sprintf('Collection \'%s\' does not have a data provider configured.',
+                $options['data_provider']));
         }
 
         $definition = new Definition(Collection::class, [
