@@ -70,7 +70,7 @@ class ServiceDefinitionFactory
         $serviceName = sprintf('data_providers.%s', $dataProviderName);
 
         if (!$container->hasDefinition($serviceName)) {
-            throw new \Exception('Collection data provider %s is not available.', $dataProviderName);
+            throw new \Exception(sprintf('Collection data provider %s is not available.', $dataProviderName));
         }
 
         return $container->getDefinition($serviceName);
