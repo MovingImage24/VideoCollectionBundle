@@ -2,7 +2,7 @@ services:
     # Service definition factory for instantiating service
     # definition instances for collections
     video_collections.service_definition_factory:
-        class: VideoCollectionBundle\Factory\ServiceDefinitionFactory
+        class: MovingImage\Bundle\VideoCollection\Factory\ServiceDefinitionFactory
         arguments:
             - '@service_container'
             - 'video_collections'
