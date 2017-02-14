@@ -22,7 +22,8 @@
   "prefer-stable": true,
   "require": {
     "php": "^5.5 || ^7.0",
-    "symfony/framework-bundle": "^2.7 || ^3.0"
+    "symfony/framework-bundle": "^2.7 || ^3.0",
+    "movingimage/video-collection": "^1.0.0"
   },
   "autoload": {
     "psr-4": {
