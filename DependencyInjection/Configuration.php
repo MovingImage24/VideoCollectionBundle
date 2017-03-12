@@ -47,6 +47,8 @@ class Configuration implements ConfigurationInterface
                             ->integerNode('limit')
                                 ->defaultValue(12)
                             ->end()
+                            ->integerNode('offset')
+                            ->end()
                             ->scalarNode('order_by')
                             ->end()
                             ->enumNode('order')
