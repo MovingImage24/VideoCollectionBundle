@@ -58,6 +58,8 @@ class Configuration implements ConfigurationInterface
                                 ->prototype('scalar')
                                 ->end()
                             ->end()
+                            ->booleanNode('include_sub_channels')
+                            ->end()
                         ->end()
                     ->end()
                 ->end()
