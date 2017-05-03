@@ -1,4 +1,5 @@
 <?php
+
 namespace MovingImage\Bundle\VideoCollection\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
@@ -17,7 +18,7 @@ class VideoCollectionExtension extends ConfigurableExtension
      * Define our collections as container parameter so that our compiler
      * pass and bundle classes can use the configuration.
      *
-     * @param array $configs
+     * @param array            $configs
      * @param ContainerBuilder $container
      */
     protected function loadInternal(array $configs, ContainerBuilder $container)

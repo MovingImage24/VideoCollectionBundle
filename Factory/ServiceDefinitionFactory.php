@@ -30,7 +30,7 @@ class ServiceDefinitionFactory
      * so that you can RETRIEVE definitions when necessary.
      *
      * @param ContainerBuilder $container
-     * @param string $prefix
+     * @param string           $prefix
      */
     public function __construct(ContainerBuilder $container, $prefix)
     {
@@ -80,7 +80,7 @@ class ServiceDefinitionFactory
      * Create a new service definition instance for a Collection.
      *
      * @param string $name
-     * @param array $options
+     * @param array  $options
      *
      * @return Definition
      *
@@ -95,7 +95,7 @@ class ServiceDefinitionFactory
         $definition = new Definition(Collection::class, [
             $this->getDataProviderDefinition($options['data_provider']),
             $name,
-            $options
+            $options,
         ]);
 
         return $definition;

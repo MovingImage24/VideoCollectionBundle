@@ -1,4 +1,5 @@
 <?php
+
 namespace MovingImage\Bundle\VideoCollection\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;

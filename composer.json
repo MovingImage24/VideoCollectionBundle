@@ -23,11 +23,12 @@
   "require": {
     "php": "^5.5 || ^7.0",
     "symfony/framework-bundle": "^2.7 || ^3.0",
-    "movingimage/video-collection": "dev-master"
+    "movingimage/video-collection": "dev-PS-651"
   },
   "require-dev": {
     "phpunit/phpunit": "^4.5 || ^5.0",
-    "symfony/expression-language": "*"
+    "symfony/expression-language": "*",
+    "movingimage/style-checker": "dev-master"
   },
   "autoload": {
     "psr-4": {

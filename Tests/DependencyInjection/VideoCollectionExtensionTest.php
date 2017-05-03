@@ -30,6 +30,7 @@ video_collection:
             search_term: abc
 EOF;
         $parser = new Parser();
+
         return $parser->parse($yml);
     }
 
@@ -47,6 +48,7 @@ video_collection:
             vm_id: 456
 EOF;
         $parser = new Parser();
+
         return $parser->parse($yml);
     }
 
@@ -70,11 +72,11 @@ EOF;
                 'order' => 'asc',
                 'order_property' => 'created_date',
                 'filter' => [
-                    'is_featured' => true
+                    'is_featured' => true,
                 ],
                 'data_provider' => 'vmsix',
-                'search_term' => 'abc'
-            ]
+                'search_term' => 'abc',
+            ],
         ];
 
         $this->assertEquals($expectedCollections, $videoCollections);
@@ -113,11 +115,10 @@ EOF;
                 'vm_id' => 456,
                 'data_provider' => 'vmpro',
                 'limit' => 12,
-                'filter' => []
-            ]
+                'filter' => [],
+            ],
         ];
 
         $this->assertEquals($expected, $videoCollections);
     }
-
 }
