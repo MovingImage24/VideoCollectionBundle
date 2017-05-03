@@ -30,6 +30,8 @@ class Configuration implements ConfigurationInterface
                             ->scalarNode('data_provider')
                                 ->defaultValue('vmpro')
                             ->end()
+                            ->scalarNode('id')
+                            ->end()
                             ->scalarNode('channel_id')
                             ->end()
                             ->arrayNode('channel_ids')
