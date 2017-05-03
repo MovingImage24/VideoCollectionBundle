@@ -32,6 +32,8 @@ class Configuration implements ConfigurationInterface
                             ->end()
                             ->scalarNode('id')
                             ->end()
+                            ->scalarNode('embed_code_id')
+                            ->end()
                             ->scalarNode('channel_id')
                             ->end()
                             ->arrayNode('channel_ids')
