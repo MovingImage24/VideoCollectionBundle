@@ -55,8 +55,9 @@ class VideoCollectionRegistry
 
         foreach ($attributes as $attribute) {
             if (isset($attribute['collection_tag'])) {
+
                 if (!isset($this->tags[$attribute['collection_tag']])) {
-                    $this->tags = [];
+                    $this->tags[$attribute['collection_tag']] = [];
                 }
 
                 $this->tags[$attribute['collection_tag']][] = $collection;
