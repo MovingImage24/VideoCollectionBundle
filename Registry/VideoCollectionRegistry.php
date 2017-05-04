@@ -53,13 +53,13 @@ class VideoCollectionRegistry
     {
         $this->collections[] = $collection;
 
-        if (isset($attributes['collection_tags'])) {
-            foreach ($attributes['collection_tags'] as $collectionTag) {
-                if (!isset($this->tags[$collectionTag])) {
+        foreach ($attributes as $attribute) {
+            if (isset($attribute['collection_tag'])) {
+                if (!isset($this->tags[$attribute['collection_tag']])) {
                     $this->tags = [];
                 }
 
-                $this->tags[$collectionTag] = $collection;
+                $this->tags[$attribute['collection_tag']] = $collection;
             }
         }
     }
