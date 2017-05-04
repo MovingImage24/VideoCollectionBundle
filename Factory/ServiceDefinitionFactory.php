@@ -121,7 +121,7 @@ class ServiceDefinitionFactory
         // ]
         if (isset($options['tags'])) {
             foreach ($options['tags'] as $tag) {
-                $definition->addTag('video_collection.collection', ['collection_tag' => $tag]);
+                $definition->addTag('video_collections.collection', ['collection_tag' => $tag]);
             }
         }
 
