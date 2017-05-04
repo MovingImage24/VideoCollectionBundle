@@ -36,7 +36,6 @@ class VideoCollectionExtension extends ConfigurableExtension
      */
     protected function loadInternal(array $configs, ContainerBuilder $container)
     {
-
         $container->setParameter('video_collections',
             $this->mergeDefaultsAndDefinitions($configs['defaults'], $configs['collections']));
 
