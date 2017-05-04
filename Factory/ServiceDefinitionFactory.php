@@ -127,7 +127,7 @@ class ServiceDefinitionFactory
 
         // Always add a tag to make it part of the registry's full
         // list of collections.
-        $definition->addTag('video_collection.collection');
+        $definition->addTag('video_collections.collection');
 
         return $definition;
     }
