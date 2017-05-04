@@ -79,10 +79,10 @@ video_collection:
     defaults:
         vmpro:
             vm_id: 456
+            limit: 666
     collections:
         collection_name:
             channel_id: 123
-            limit: 4
             order: asc
             order_property: created_date
             filter:
@@ -143,7 +143,6 @@ EOF;
             'collection_name' => [
                 'vm_id' => 456,
                 'data_provider' => 'vmpro',
-                'limit' => 12,
                 'filter' => [],
                 'channel_ids' => [],
             ],
@@ -187,7 +186,7 @@ EOF;
             'collection_name' => [
                 'channel_id' => 123,
                 'vm_id' => 456,
-                'limit' => 4,
+                'limit' => 666,
                 'order' => 'asc',
                 'order_property' => 'created_date',
                 'filter' => [
