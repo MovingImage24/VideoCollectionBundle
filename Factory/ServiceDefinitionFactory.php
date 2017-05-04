@@ -98,6 +98,8 @@ class ServiceDefinitionFactory
             $options,
         ]);
 
+        $definition->addTag('video_collection.collection', ['collection_tags' => $options['tags']]);
+
         return $definition;
     }
 }
