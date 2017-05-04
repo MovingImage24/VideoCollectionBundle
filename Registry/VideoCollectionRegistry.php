@@ -59,7 +59,7 @@ class VideoCollectionRegistry
                     $this->tags = [];
                 }
 
-                $this->tags[$attribute['collection_tag']] = $collection;
+                $this->tags[$attribute['collection_tag']][] = $collection;
             }
         }
     }

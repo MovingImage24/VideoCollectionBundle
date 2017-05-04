@@ -123,11 +123,10 @@ class ServiceDefinitionFactory
             foreach ($options['tags'] as $tag) {
                 $definition->addTag('video_collections.collection', ['collection_tag' => $tag]);
             }
+        } else {
+            // When there's no tags, add it to the registry without tags.
+            $definition->addTag('video_collections.collection');
         }
-
-        // Always add a tag to make it part of the registry's full
-        // list of collections.
-        $definition->addTag('video_collections.collection');
 
         return $definition;
     }

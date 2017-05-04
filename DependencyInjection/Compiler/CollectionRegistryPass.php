@@ -29,13 +29,11 @@ class CollectionRegistryPass implements CompilerPassInterface
         $definition = $container->getDefinition('video_collections.registry');
         $taggedServices = $container->findTaggedServiceIds('video_collections.collection');
 
-        foreach ($taggedServices as $id => $tags) {
-            foreach ($tags as $attributes) {
-                $definition->addMethodCall('addCollection', array(
-                    new Reference($id),
-                    $attributes
-                ));
-            }
+        foreach ($taggedServices as $id => $attributes) {
+            $definition->addMethodCall('addCollection', array(
+                new Reference($id),
+                $attributes
+            ));
         }
     }
 }
