@@ -98,7 +98,17 @@ class ServiceDefinitionFactory
             $options,
         ]);
 
-        $definition->addTag('video_collection.collection', ['collection_tags' => $options['tags']]);
+        // Append service tag, which contains optionally
+        // video collection tags for the registry.
+        $attributes = [];
+
+        if (isset($options['tags'])) {
+            $attributes = [
+                'collection_tags' => $options['tags'],
+            ];
+        }
+
+        $definition->addTag('video_collection.collection', $attributes);
 
         return $definition;
     }
