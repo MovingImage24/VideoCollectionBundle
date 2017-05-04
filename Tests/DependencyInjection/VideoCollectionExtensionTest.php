@@ -53,6 +53,49 @@ EOF;
     }
 
     /**
+     * Returns an empty configuration with zero collections.
+     *
+     * @return array
+     */
+    private function getNoCollections()
+    {
+        $yml = <<<'EOF'
+video_collection: ~
+EOF;
+        $parser = new Parser();
+
+        return $parser->parse($yml);
+    }
+
+    /**
+     * Returns a full configuration with defaults.
+     *
+     * @return array
+     */
+    private function getFullConfigWithDefaults()
+    {
+        $yml = <<<'EOF'
+video_collection:
+    defaults:
+        vmpro:
+            vm_id: 456
+    collections:
+        collection_name:
+            channel_id: 123
+            limit: 4
+            order: asc
+            order_property: created_date
+            filter:
+                is_featured: true
+            data_provider: vmpro
+            search_term: abc
+EOF;
+        $parser = new Parser();
+
+        return $parser->parse($yml);
+    }
+
+    /**
      * Test if configuration set is successfully written as parameters in the container.
      */
     public function testConfig()
@@ -76,25 +119,11 @@ EOF;
                 ],
                 'data_provider' => 'vmsix',
                 'search_term' => 'abc',
+                'channel_ids' => [],
             ],
         ];
 
         $this->assertEquals($expectedCollections, $videoCollections);
-    }
-
-    /**
-     * Test if an empty configuration set with missing video manager Id throws an exception.
-     *
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
-     */
-    public function testEmptyConfigThrowsExceptionUnlessVmId()
-    {
-        $config = $this->getEmptyConfig();
-        unset($config['video_collection']['collections']['collection_name']['vm_id']);
-        $videoCollectionExtension = new VideoCollectionExtension();
-        $container = new ContainerBuilder();
-
-        $videoCollectionExtension->load($config, $container);
     }
 
     /**
@@ -116,9 +145,60 @@ EOF;
                 'data_provider' => 'vmpro',
                 'limit' => 12,
                 'filter' => [],
+                'channel_ids' => [],
             ],
         ];
 
         $this->assertEquals($expected, $videoCollections);
+    }
+
+    /**
+     * Test if an empty configuration set will be filled with default values.
+     */
+    public function testNoCollectionsInConfig()
+    {
+        $config = $this->getNoCollections();
+        $videoCollectionExtension = new VideoCollectionExtension();
+        $container = new ContainerBuilder();
+
+        $videoCollectionExtension->load($config, $container);
+
+        $videoCollections = $container->getParameter('video_collections');
+
+        $expected = [
+        ];
+
+        $this->assertEquals($expected, $videoCollections);
+    }
+
+    /**
+     * Test if configuration set is successfully written as parameters in the container.
+     */
+    public function testConfigWithDefaults()
+    {
+        $config = $this->getFullConfigWithDefaults();
+        $videoCollectionExtension = new VideoCollectionExtension();
+        $container = new ContainerBuilder();
+
+        $videoCollectionExtension->load($config, $container);
+        $videoCollections = $container->getParameter('video_collections');
+
+        $expectedCollections = [
+            'collection_name' => [
+                'channel_id' => 123,
+                'vm_id' => 456,
+                'limit' => 4,
+                'order' => 'asc',
+                'order_property' => 'created_date',
+                'filter' => [
+                    'is_featured' => true,
+                ],
+                'data_provider' => 'vmpro',
+                'search_term' => 'abc',
+                'channel_ids' => [],
+            ],
+        ];
+
+        $this->assertEquals($expectedCollections, $videoCollections);
     }
 }

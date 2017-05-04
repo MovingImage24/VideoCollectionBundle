@@ -24,6 +24,14 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->arrayNode('defaults')
+                    ->prototype('array')
+                        ->children()
+                            ->scalarNode('vm_id')
+                            ->end()
+                        ->end()
+                    ->end()
+                ->end()
                 ->arrayNode('collections')
                     ->prototype('array')
                         ->children()
@@ -47,7 +55,6 @@ class Configuration implements ConfigurationInterface
                             ->scalarNode('order_property')
                             ->end()
                             ->scalarNode('vm_id')
-                                ->isRequired()
                             ->end()
                             ->integerNode('limit')
                                 ->defaultValue(12)
