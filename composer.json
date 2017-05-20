@@ -23,7 +23,7 @@
   "require": {
     "php": "^5.5 || ^7.0",
     "symfony/framework-bundle": "^2.7 || ^3.0",
-    "movingimage/video-collection": "dev-PS-651"
+    "movingimage/video-collection": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "^4.5 || ^5.0",
