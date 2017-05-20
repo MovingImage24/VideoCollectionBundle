@@ -9,15 +9,6 @@
       "email": "ruben.knol@movingimage.com"
     }
   ],
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "http://packagist.mi24.tv/"
-    }
-  ],
-  "config": {
-    "secure-http": false
-  },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
