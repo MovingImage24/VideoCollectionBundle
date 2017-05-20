@@ -1,4 +1,5 @@
 <?php
+
 namespace MovingImage\Bundle\VideoCollection\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;

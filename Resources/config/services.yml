@@ -1,4 +1,9 @@
 services:
+    # Registry that will keep track of all tagged video collection
+    # services instance and exposes methods to get all, or by alias
+    video_collections.registry:
+        class: MovingImage\Bundle\VideoCollection\Registry\VideoCollectionRegistry
+
     # Service definition factory for instantiating service
     # definition instances for collections
     video_collections.service_definition_factory:

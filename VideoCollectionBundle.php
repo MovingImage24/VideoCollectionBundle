@@ -2,6 +2,7 @@
 
 namespace MovingImage\Bundle\VideoCollection;
 
+use MovingImage\Bundle\VideoCollection\DependencyInjection\Compiler\CollectionRegistryPass;
 use MovingImage\Bundle\VideoCollection\DependencyInjection\Compiler\CollectionServiceDefinitionPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
@@ -21,5 +22,6 @@ class VideoCollectionBundle extends Bundle
         parent::build($container);
 
         $container->addCompilerPass(new CollectionServiceDefinitionPass());
+        $container->addCompilerPass(new CollectionRegistryPass());
     }
 }

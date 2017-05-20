@@ -1,4 +1,5 @@
 <?php
+
 if (!($loader = @include __DIR__.'/../vendor/autoload.php')) {
     echo <<<'EOT'
 You need to install the project dependencies using Composer:

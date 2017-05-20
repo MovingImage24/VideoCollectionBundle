@@ -30,7 +30,7 @@ class ServiceDefinitionFactory
      * so that you can RETRIEVE definitions when necessary.
      *
      * @param ContainerBuilder $container
-     * @param string $prefix
+     * @param string           $prefix
      */
     public function __construct(ContainerBuilder $container, $prefix)
     {
@@ -80,7 +80,7 @@ class ServiceDefinitionFactory
      * Create a new service definition instance for a Collection.
      *
      * @param string $name
-     * @param array $options
+     * @param array  $options
      *
      * @return Definition
      *
@@ -95,8 +95,38 @@ class ServiceDefinitionFactory
         $definition = new Definition(Collection::class, [
             $this->getDataProviderDefinition($options['data_provider']),
             $name,
-            $options
+            $options,
         ]);
+
+        // Append service tag, but due to the nature of Symfony's tag attribute
+        // design (must be scalar), we must add one tag per collection tag in
+        // the options. I think this is pretty dumb design tbh.
+        //
+        // To illustrate, if we were to define this:
+        //
+        // services:
+        //   my_service:
+        //     tags:
+        //       - [name: my_tag, collection_tag: bla]
+        //       - [name: my_tag, collection_tag: bla2]
+        //       - [name: my_tag, collection_tag: bla3]
+        //
+        // We would end up with the registry method being called only once
+        // and $attributes would be this:
+        //
+        // [
+        //    [0] => ['collection_tag' => 'bla'],
+        //    [1] => ['collection_tag' => 'bla2'],
+        //    [2] => ['collection_tag' => 'bla3'],
+        // ]
+        if (isset($options['tags'])) {
+            foreach ($options['tags'] as $tag) {
+                $definition->addTag('video_collections.collection', ['collection_tag' => $tag]);
+            }
+        } else {
+            // When there's no tags, add it to the registry without tags.
+            $definition->addTag('video_collections.collection');
+        }
 
         return $definition;
     }

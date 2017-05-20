@@ -1,4 +1,5 @@
 <?php
+
 namespace MovingImage\Bundle\VideoCollection\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -23,11 +24,31 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->arrayNode('defaults')
+                    ->prototype('array')
+                        ->children()
+                            ->scalarNode('vm_id')
+                            ->end()
+                            ->integerNode('limit')
+                            ->end()
+                            ->scalarNode('player_id')
+                            ->end()
+                        ->end()
+                    ->end()
+                ->end()
                 ->arrayNode('collections')
                     ->prototype('array')
                         ->children()
                             ->scalarNode('data_provider')
                                 ->defaultValue('vmpro')
+                            ->end()
+                            ->arrayNode('tags')
+                                ->prototype('scalar')
+                                ->end()
+                            ->end()
+                            ->scalarNode('id')
+                            ->end()
+                            ->scalarNode('player_id')
                             ->end()
                             ->scalarNode('channel_id')
                             ->end()
@@ -42,10 +63,8 @@ class Configuration implements ConfigurationInterface
                             ->scalarNode('order_property')
                             ->end()
                             ->scalarNode('vm_id')
-                                ->isRequired()
                             ->end()
                             ->integerNode('limit')
-                                ->defaultValue(12)
                             ->end()
                             ->integerNode('offset')
                             ->end()

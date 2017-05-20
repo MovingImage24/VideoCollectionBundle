@@ -14,16 +14,16 @@ class CollectionServiceDefinitionPassTest extends \PHPUnit_Framework_TestCase
         $videoCollections = [
             'collection_name_1' => [
                 'channel_id' => 123,
-                'vm_id' => 456
-            ]
-            ,'collection_name_2' => [
+                'vm_id' => 456,
+            ],
+            'collection_name_2' => [
                 'channel_id' => 123,
-                'vm_id' => 456
+                'vm_id' => 456,
             ],
             'collection_name_3' => [
                 'channel_id' => 123,
-                'vm_id' => 456
-            ]
+                'vm_id' => 456,
+            ],
         ];
 
         $videoCollectionsCount = count($videoCollections);
@@ -57,13 +57,13 @@ class CollectionServiceDefinitionPassTest extends \PHPUnit_Framework_TestCase
             ->expects($this->exactly($videoCollectionsCount))
             ->method('setDefinition')
             ->will($this->onConsecutiveCalls(
-                $this->returnCallback(function($string) {
+                $this->returnCallback(function ($string) {
                     $this->assertEquals('video_collections.collections.collection_name_1', $string);
                 }),
-                $this->returnCallback(function($string) {
+                $this->returnCallback(function ($string) {
                     $this->assertEquals('video_collections.collections.collection_name_2', $string);
                 }),
-                $this->returnCallback(function($string) {
+                $this->returnCallback(function ($string) {
                     $this->assertEquals('video_collections.collections.collection_name_3', $string);
                 })
             ));
