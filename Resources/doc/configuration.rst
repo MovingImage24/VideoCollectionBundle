@@ -64,7 +64,13 @@ This parameter is used to specify which data provider is to be used to retrieve 
 
 Example:
 
+.. code-block:: yaml
 
+    video_collection:
+        collections:
+            my_collection:
+                data_provider: vm6
+                # ...
 
 Default values
 --------------

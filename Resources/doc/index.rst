@@ -119,7 +119,7 @@ expressed in a way that you can inject the eventual value during run-time:
                 limit: 10
                 channel_id: ~
 
-By defining specific parameters as `~` (which represents NULL in YAML), you can set them at runtime:
+By defining specific parameters as ``~`` (which represents NULL in YAML), you can set them at runtime:
 
 .. code-block:: php
 
