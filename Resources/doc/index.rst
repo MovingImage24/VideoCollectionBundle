@@ -1,16 +1,15 @@
 Getting started with the Video Collection Bundle
 ================================================
 
-This Symfony bundle allows you to seamlessly integrate the MovingIMAGE Video
-Manager Pro into your PHP application built on top of the Symfony framework.
+This Symfony bundle allows you to abstract away the need to interact directly with the Video
+Manager APIs, and enable you to define criteria as to what forms 'collections' of videos, and
+offers an elegant way to incorporate this into the Symfony Framework.
 
 Prerequisites
 -------------
 
-This version requires version 2.7+ or 3.0+ of the Symfony framework, and supports
-version 5.* and 6.* of the Guzzle HTTP client. (it will use which ever one is
-already present in your dependencies, or install the latest available version if
-you don't already have Guzzle as a dependency).
+This bundle requires version 2.7+ or 3.0+ of the Symfony framework, and supports
+PHP 5.6, 7.0 and 7.1
 
 Installation
 ------------
@@ -70,8 +69,6 @@ Let's type a simple collection:
 
     video_collection:
         collections:
-            # User upload list collection for
-            # on the video upload portal
             video_list:
                 limit: 10
                 channel_id: 10110
@@ -118,8 +115,6 @@ expressed in a way that you can inject the eventual value during run-time:
 
     video_collection:
         collections:
-            # User upload list collection for
-            # on the video upload portal
             video_list:
                 limit: 10
                 channel_id: ~
