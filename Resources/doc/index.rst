@@ -88,7 +88,7 @@ Now inside your controller, you can access this collection as a service:
         {
             $collection = $this->get('video_collections.collections.video_list');
 
-            foreach ($collection->generator as $video) {
+            foreach ($collection->generator() as $video) {
                 echo $video->getTitle() . PHP_EOL;
             }
         }
@@ -152,4 +152,4 @@ ________
 If you want to read about any functionality in particular, you can read about the following services:
 
 * `Collection <services/collection.rst>`_ - Documentation for the Collection base class
-* `CollectionRegistry <services/collection_registry.rst>`_ Documentation for the collection registry helper
+* `CollectionRegistry <services/collection_registry.rst>`_ - Documentation for the collection registry helper
