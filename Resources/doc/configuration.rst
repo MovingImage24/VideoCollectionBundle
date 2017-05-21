@@ -72,6 +72,41 @@ Example:
                 data_provider: vm6
                 # ...
 
+vm_id
+_____
+
+**Default value:** ``null``
+
+This parameter defines which Video Manager ID the request to retrieve the videos will be made to. This parameter is
+only relevant when you use the Video Manager Pro data provider.
+
+Example:
+
+.. code-block:: yaml
+
+    video_collection:
+        collections:
+            my_collection:
+                vm_id: 24324
+                # ...
+
+channel_id
+__________
+
+**Default value:** ``null``
+
+This parameter defines which channel the result set will be limited to.
+
+Example:
+
+.. code-block:: yaml
+
+    video_collection:
+        collections:
+            my_collection:
+                channel_id: 123123
+                # ...
+
 Default values
 --------------
 
