@@ -41,7 +41,7 @@ Your implementation code would look something like this:
 
 .. code-block:: php
 
-<?php
+    <?php
 
     // ...
 
@@ -61,7 +61,7 @@ to rename them in the configuration, you would have to rename them in the code a
 
 Using the service ``@video_collections.registry`` you can simplify the example above to this:
 
-<?php
+    <?php
 
     // ...
 
@@ -128,7 +128,7 @@ amount of collections below that. You can use **collection tags** for this:
 Using the ``tags`` parameter in the collection definition, you can group video collections and in your
 code retrieve them by tag:
 
-<?php
+    <?php
 
     // ...
 
