@@ -145,3 +145,11 @@ __________
 
 For a more complete guide on configuration, please take a look at `How To Configure <configuration.rst>`_
 video collections, which shows the full range of functionalities and how to apply them.
+
+Services
+________
+
+If you want to read about any functionality in particular, you can read about the following services:
+
+* `Collection <services/collection.rst>`_ - Documentation for the Collection base class
+* `CollectionRegistry <services/collection_registry.rst>`_ Documentation for the collection registry helper

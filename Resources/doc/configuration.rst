@@ -223,6 +223,17 @@ Example:
                 order: desc # Newest videos first
                 # ...
 
+tags
+____
+
+**Default value:** ``[]``
+
+Tags are a neat way to provide more elegant access to your individual collection, by allowing you
+to group them and access them by group.
+
+To read more about them, please consult the `CollectionRegistry <services/collection_registry.rst>`_ documentation,
+which explains how to use tags inside the registry.
+
 Video ID
 ________
 
@@ -318,7 +329,3 @@ The following parameters are available to be defined as ``default`` at this time
 * **player_id**
 
 If you need any new ones, please open a PR or a ticket requesting for new parameters to be added here.
-
-Collection Tags & Registry
---------------------------
-
