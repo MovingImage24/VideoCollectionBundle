@@ -24,7 +24,7 @@ Imagine your collection is like this:
 
 You'd get an array like this:
 
-..code-block:: php
+.. code-block:: php
     [
         'channel_id' => 10110
     ]
@@ -50,7 +50,7 @@ yourself to do processing one-by-one.
 
 Examples:
 
-..code-block:: php
+.. code-block:: php
 
     <?php
     // ...
@@ -62,7 +62,7 @@ Examples:
 Something to keep in mind is that if you use array functions to retrieve nodes from the generator,
 they will disappear from the generator when you iterate it at a later time:
 
-..code-block:: php
+.. code-block:: php
 
     <?php
     // ...
