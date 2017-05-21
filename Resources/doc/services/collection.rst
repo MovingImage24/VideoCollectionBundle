@@ -24,7 +24,7 @@ Imagine your collection is like this:
 
 You'd get an array like this:
 
-.. code-block:: json
+.. code-block:: php
 
     [
         'channel_id' => 10110
