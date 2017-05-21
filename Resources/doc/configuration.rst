@@ -53,6 +53,17 @@ Or in service definition:
 Parameters
 ----------
 
+There's quite a few parameters available to specifically target your collections. Here's what they are and how to use them.
+
+data_provider
+_____________
+
+**Default value:** `vmpro`
+
+This parameter is used to specify which data provider is to be used to retrieve the actual videos for the collections.
+
+
+
 Default values
 --------------
 
