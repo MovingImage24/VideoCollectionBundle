@@ -98,6 +98,9 @@ class ServiceDefinitionFactory
             $options,
         ]);
 
+        // services fetched from the container need to be public
+        $definition->setPublic(true);
+
         // Append service tag, but due to the nature of Symfony's tag attribute
         // design (must be scalar), we must add one tag per collection tag in
         // the options. I think this is pretty dumb design tbh.
